@@ -1,0 +1,23 @@
+import './globals.css'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import { ThemeProvider } from '../context/ThemeContext'
+
+export const metadata = {
+  title: 'Bijay Karki | Sales Head - Mypower',
+  description: 'Professional portfolio of Bijay Karki, Sales Head at Mypower - Leading mobile accessories brand',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
