@@ -7,8 +7,8 @@ export default function SettingsView() {
   const { theme, toggleTheme } = useTheme()
   const [siteName, setSiteName] = useState('Bijay Karki | Sales Head - Mypower')
   const [siteDescription, setSiteDescription] = useState('Professional portfolio of Bijay Karki')
-  const [contactEmail, setContactEmail] = useState('bijay.karki@mypower.com')
-  const [contactPhone, setContactPhone] = useState('+977-98XXXXXXXX')
+  const [contactEmail, setContactEmail] = useState('bijayofficial03@gmail.com')
+  const [contactPhone, setContactPhone] = useState('+977-984886695')
   const [saved, setSaved] = useState(false)
 
   const handleSave = () => {

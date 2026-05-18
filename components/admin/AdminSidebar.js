@@ -19,14 +19,14 @@ export default function AdminSidebar({ activeTab, setActiveTab }) {
   }
 
   return (
-    <div className="w-64 bg-white dark:bg-gray-800 shadow-lg min-h-screen p-4">
-      <div className="mb-8">
+    <div className="w-64 bg-white dark:bg-gray-800 shadow-lg min-h-screen flex flex-col">
+      <div className="p-4 mb-4">
         <h1 className="text-xl font-bold text-gray-900 dark:text-white">
           Mypower<span className="text-blue-600">Admin</span>
         </h1>
       </div>
 
-      <nav className="space-y-2">
+      <nav className="space-y-2 px-4 flex-1">
         {menuItems.map((item) => (
           <button
             key={item.id}
@@ -43,7 +43,7 @@ export default function AdminSidebar({ activeTab, setActiveTab }) {
         ))}
       </nav>
 
-      <div className="absolute bottom-4 left-4 right-4">
+      <div className="p-4 border-t dark:border-gray-700">
         <button
           onClick={handleLogout}
           className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg border border-red-300 dark:border-red-700 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors"

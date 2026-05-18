@@ -52,13 +52,6 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
-
-            <a
-              href="/admin"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-            >
-              Admin
-            </a>
           </div>
 
           <div className="md:hidden flex items-center space-x-4">
@@ -107,12 +100,6 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="/admin"
-              className="block px-3 py-2 text-blue-600 font-medium"
-            >
-              Admin Panel
-            </a>
           </div>
         </div>
       )}
