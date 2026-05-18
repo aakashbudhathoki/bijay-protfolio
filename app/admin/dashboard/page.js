@@ -8,6 +8,7 @@ import MessagesView from '../../../components/admin/MessagesView'
 import GalleryManager from '../../../components/admin/GalleryManager'
 import ContentManager from '../../../components/admin/ContentManager'
 import SettingsView from '../../../components/admin/SettingsView'
+import HeroManager from '../../../components/admin/HeroManager'
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -27,6 +28,8 @@ export default function AdminDashboard() {
     switch (activeTab) {
       case 'dashboard':
         return <DashboardHome messages={messages} achievements={achievements} gallery={gallery} />
+      case 'hero':
+        return <HeroManager />
       case 'messages':
         return <MessagesView messages={messages} setMessages={setMessages} />
       case 'gallery':

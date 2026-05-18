@@ -7,6 +7,7 @@ export default function AdminSidebar({ activeTab, setActiveTab }) {
 
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: '📊' },
+    { id: 'hero', label: 'Hero Slider', icon: '🎨' },
     { id: 'messages', label: 'Messages', icon: '📧' },
     { id: 'gallery', label: 'Gallery', icon: '🖼️' },
     { id: 'content', label: 'Content', icon: '📝' },
