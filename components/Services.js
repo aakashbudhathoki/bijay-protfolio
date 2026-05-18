@@ -1,4 +1,26 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+
 export default function Services() {
+  const [settings, setSettings] = useState(null)
+
+  useEffect(() => {
+    fetch('/api/admin/settings')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.settings) {
+          setSettings(data.settings)
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  const s = settings?.services || {}
+  const title = s.title || 'What I Do'
+  const titleSize = s.titleSize || 'text-3xl sm:text-4xl'
+  const description = s.description || 'As Sales Head at Mypower, I oversee multiple aspects of the sales operation to ensure success in the mobile accessories market.'
+
   const services = [
     {
       icon: (
@@ -60,11 +82,9 @@ export default function Services() {
     <section id="services" className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Do</h2>
+          <h2 className={`${titleSize} font-bold text-gray-900 dark:text-white mb-4`}>{title}</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            As Sales Head at Mypower, I oversee multiple aspects of the sales operation to ensure success in the mobile accessories market.
-          </p>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{description}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

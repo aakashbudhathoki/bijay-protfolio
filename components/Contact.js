@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +11,18 @@ export default function Contact() {
   })
   const [status, setStatus] = useState('')
   const [loading, setLoading] = useState(false)
+  const [settings, setSettings] = useState(null)
+
+  useEffect(() => {
+    fetch('/api/admin/settings')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.settings) {
+          setSettings(data.settings)
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   const handleChange = (e) => {
     setFormData({
@@ -48,15 +60,24 @@ export default function Contact() {
     setLoading(false)
   }
 
+  const c = settings?.contact || {}
+  const title = c.title || 'Get in Touch'
+  const titleSize = c.titleSize || 'text-3xl sm:text-4xl'
+  const description = c.description || "Interested in Mypower products or want to discuss business opportunities? Let's connect!"
+  const location = c.location || 'Kathmandu, Nepal'
+  const email = c.email || 'bijayofficial03@gmail.com'
+  const phone = c.phone || '+977-984886695'
+  const businessHoursTitle = c.businessHoursTitle || 'Business Hours'
+  const businessHoursWeek = c.businessHoursWeek || 'Sunday - Friday: 10:00 AM - 6:00 PM'
+  const businessHoursWeekend = c.businessHoursWeekend || 'Saturday: Closed'
+
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h2>
+          <h2 className={`${titleSize} font-bold text-gray-900 dark:text-white mb-4`}>{title}</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Interested in Mypower products or want to discuss business opportunities? Let&apos;s connect!
-          </p>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{description}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
@@ -72,7 +93,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Kathmandu, Nepal</p>
+                  <p className="text-gray-600 dark:text-gray-400">{location}</p>
                 </div>
               </div>
 
@@ -84,7 +105,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
-                  <p className="text-gray-600 dark:text-gray-400">bijayofficial03@gmail.com</p>
+                  <p className="text-gray-600 dark:text-gray-400">{email}</p>
                 </div>
               </div>
 
@@ -96,15 +117,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Phone</h4>
-                  <p className="text-gray-600 dark:text-gray-400">+977-984886695</p>
+                  <p className="text-gray-600 dark:text-gray-400">{phone}</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-10 p-6 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Business Hours</h4>
-              <p className="text-gray-600 dark:text-gray-400">Sunday - Friday: 10:00 AM - 6:00 PM</p>
-              <p className="text-gray-600 dark:text-gray-400">Saturday: Closed</p>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{businessHoursTitle}</h4>
+              <p className="text-gray-600 dark:text-gray-400">{businessHoursWeek}</p>
+              <p className="text-gray-600 dark:text-gray-400">{businessHoursWeekend}</p>
             </div>
           </div>
 
