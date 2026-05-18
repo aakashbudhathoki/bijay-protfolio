@@ -8,13 +8,14 @@ export async function POST(req) {
     await dbConnect()
     const { username, password } = await req.json()
 
-    const admin = await Admin.findOne({ email: username })
+    if (!username || !password) {
+      return NextResponse.json({ error: 'Email and password are required' }, { status: 400 })
+    }
+
+    const admin = await Admin.findOne({ email: username.trim() })
 
     if (!admin || admin.password !== password) {
-      return NextResponse.json(
-        { error: 'Invalid credentials' },
-        { status: 401 }
-      )
+      return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 })
     }
 
     const token = crypto.randomBytes(32).toString('hex')
@@ -25,8 +26,9 @@ export async function POST(req) {
       message: 'Login successful'
     })
   } catch (error) {
+    console.error('Login error:', error)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Login failed. Check Vercel runtime logs.' },
       { status: 500 }
     )
   }
