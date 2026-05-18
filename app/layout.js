@@ -8,6 +8,12 @@ export const metadata = {
   description: 'Professional portfolio of Bijay Karki, Sales Head at Mypower - Leading mobile accessories brand',
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>

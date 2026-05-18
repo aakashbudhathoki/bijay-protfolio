@@ -27,10 +27,10 @@ export default function Achievements() {
   ]
 
   return (
-    <section id="achievements" className="py-20 bg-white dark:bg-gray-800">
+    <section id="achievements" className="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Milestones and accomplishments that reflect my dedication to excellence in sales.
