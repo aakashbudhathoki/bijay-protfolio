@@ -31,16 +31,16 @@ export default function Hero() {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-2xl">
-                <span className="text-white text-8xl md:text-9xl font-bold">BK</span>
+              <div className="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-2xl">
+                <span className="text-white text-6xl sm:text-7xl md:text-9xl font-bold">BK</span>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4">
-                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">10+</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">Years Experience</p>
+              <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-3">
+                <p className="text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400">10+</p>
+                <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm">Years Experience</p>
               </div>
-              <div className="absolute -top-4 -left-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4">
-                <p className="text-2xl font-bold text-green-600 dark:text-green-400">500+</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">Happy Clients</p>
+              <div className="absolute -top-4 -left-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-3">
+                <p className="text-xl md:text-2xl font-bold text-green-600 dark:text-green-400">500+</p>
+                <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm">Happy Clients</p>
               </div>
             </div>
           </div>
