@@ -53,7 +53,7 @@ export default function Hero() {
   }
 
   const h = settings?.hero || {}
-  const title = h.title || "Hi, I'm Bijay Karki"
+  const title = h.title || "Bijay Karki"
   const titleColor = h.titleColor || '#ffffff'
   const titleSize = h.titleSize || 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl'
   const subtitle = h.subtitle || 'Sales Head at Mypower'
@@ -139,10 +139,10 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <p className="text-blue-400 font-semibold mb-4">Welcome to my portfolio</p>
             <h1 className={`${titleSize} font-bold mb-4 md:mb-6 drop-shadow-lg`} style={{ color: titleColor }}>
-              Hi, I&apos;m <span style={{ color: titleColor === '#ffffff' ? '#60a5fa' : titleColor }}>{title.replace("Hi, I'm ", '')}</span>
+              {title}
             </h1>
             <h2 className={`${subtitleSize} mb-6 md:mb-8 drop-shadow`} style={{ color: subtitleColor }}>
-              <span style={{ color: subtitleColor === '#ffffff' ? '#60a5fa' : subtitleColor, fontWeight: '600' }}>{subtitle}</span>
+              {subtitle}
             </h2>
             <p className={`${descriptionSize} mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0 drop-shadow`} style={{ color: descriptionColor }}>
               {description}

@@ -6,7 +6,7 @@ const SiteSettingsSchema = new mongoose.Schema({
     fontFamily: { type: String, default: 'Arial, Helvetica, sans-serif' },
   },
   hero: {
-    title: { type: String, default: "Hi, I'm Bijay Karki" },
+    title: { type: String, default: 'Bijay Karki' },
     titleColor: { type: String, default: '#ffffff' },
     titleSize: { type: String, default: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl' },
     subtitle: { type: String, default: 'Sales Head at Mypower' },

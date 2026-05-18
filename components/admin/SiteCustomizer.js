@@ -25,7 +25,7 @@ export default function SiteCustomizer() {
   const [settings, setSettings] = useState({
     global: { primaryColor: '#2563eb', fontFamily: 'Arial, Helvetica, sans-serif' },
     hero: {
-      title: "Hi, I'm Bijay Karki",
+      title: 'Bijay Karki',
       titleColor: '#ffffff',
       titleSize: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl',
       subtitle: 'Sales Head at Mypower',
